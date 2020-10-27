@@ -13,3 +13,7 @@ def extract_string(dataframe, column, regex, new_column=None):
         dataframe[new_column] = dataframe[new_column].apply(lambda x: listToString(x))
         dataframe[new_column] = dataframe[new_column].apply(lambda x: x.lstrip())
         return dataframe[new_column]
+
+def replace_regex(dataframe, column, regex, replace_str):
+    dataframe[column] = dataframe[column].replace(regex, replace_str, regex=True)
+    return dataframe[column]
