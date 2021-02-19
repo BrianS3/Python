@@ -1,17 +1,5 @@
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-try:
-    import pytchat
-except:
-    install(pytchat)
-    import pytchat
-
-try:
-    import json
-except:
-    install(json)
-    import json
+import pytchat
+import pytchat
 
 videoId = input('Enter YouTube Video ID: ')
 
