@@ -5,7 +5,7 @@ def sql_output(df, column):
 
 	count = len(lst)
 	if count>1000:
-		print('query cannot support parameters greating than 1000 objects')
+		print('query cannot support parameters greater than 1000 objects')
 		return None
 	output = ''
 	for y in lst:
