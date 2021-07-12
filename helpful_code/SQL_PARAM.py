@@ -1,33 +1,15 @@
-#!/usr/bin/env python
-# coding: utf-8
+def sql_output(df, column):
+    lst = []
+    for ind, row in df.iterrows():
+        lst.append(row[column])
 
-# In[1]:
-
-
-from tkinter import Tk
-r = Tk()
-r.withdraw()
-
-param = input('Enter Query Parameter')
-
-count = len(param.split())
-output = []
-for x in param.split():
-    if count>1:
-        output.append("'" + x + "'" + ",")
-    else:
-        output.append("'" + x + "'")
-    count-=1
-
-
-# In[4]:
-
-
-r.clipboard_append(output)
-
-
-# In[5]:
-
-
-r.update()
+    count =len(lst)
+    output = ''
+    for y in lst:
+        if count>1:
+            output =  output+"'" + str(y) + "'" + ","+" "
+            count-=1
+        else:
+            output = output+"'" + str(y) + "'"
+    return output
 
